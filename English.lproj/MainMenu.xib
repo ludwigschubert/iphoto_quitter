@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1090" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="494" id="495"/>
+                <outlet property="dockMenu" destination="DOB-Pu-5I2" id="11s-pL-MQw"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customObject id="494" customClass="AppDelegate">
+            <connections>
+                <outlet property="toggleStartAtLogin" destination="MVP-78-sxC" id="x6V-RV-6KM"/>
+            </connections>
+        </customObject>
+        <customObject id="420" customClass="NSFontManager"/>
+        <customObject id="533" customClass="IPMenulet">
+            <connections>
+                <outlet property="diskImageItem" destination="M5C-vq-e35" id="oo4-MA-1GK"/>
+                <outlet property="statusMenu" destination="DOB-Pu-5I2" id="wO4-j3-drp"/>
+            </connections>
+        </customObject>
+        <menu id="DOB-Pu-5I2">
+            <items>
+                <menuItem title="Start at Login" hidden="YES" enabled="NO" id="MVP-78-sxC">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="unmountiPhotoDatabaseIfPossible:" target="494" id="vq5-U4-Zws"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Select iPhoto Disk Image…" id="M5C-vq-e35">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="selectDiskImageWasClicked:" target="533" id="0wY-lR-SmW"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="qrp-ra-sCu"/>
+                <menuItem title="Debug" id="K8O-Oo-mhG">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Debug" id="uBT-1v-I43">
+                        <items>
+                            <menuItem title="Mount Disk Image" id="MBO-SO-C75">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="debug_mountDiskImage:" target="494" id="mCt-Nh-hCM"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Unmount Disk Image" id="Rov-3X-b9v">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="debug_unmountDiskImage:" target="494" id="Tr6-RK-hp2"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Start iPhoto" id="9K0-Cu-547">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="debug_startIPhoto:" target="494" id="r4y-d1-wnM"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Quit iPhoto" id="8Wo-zU-8L0">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="debug_quitIPhoto:" target="494" id="GNc-D5-Pgy"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Quit iPhotoQuitter" id="MJm-gV-Swk">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quit:" target="494" id="ASx-NL-T5x"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+    </objects>
+</document>
